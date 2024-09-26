@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/api/register';
+  private apiUrl = 'https://pjserver.onrender.com/api/register';
 
   constructor(private http: HttpClient) { } // ใช้ HttpClient
 

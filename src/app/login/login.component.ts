@@ -12,7 +12,7 @@ export class LoginComponent {
   password: string = '';
   loginError: string | null = null;
 
-  private apiUrl = 'http://localhost:3000/api/login'; // URL ของ API ที่คุณใช้
+  private apiUrl = 'https://pjserver.onrender.com/api/login'; // URL ของ API ที่คุณใช้
 
   constructor(private http: HttpClient, private router: Router) { }
 
