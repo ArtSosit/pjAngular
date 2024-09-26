@@ -41,58 +41,58 @@ export class RegisterComponent {
     }
   }
   onRegister() {
-  //   this.authService.register(this.user).subscribe(
-  //     response => {
-  //       console.log('Registration successful!', response);
-  //       this.user.userID = response.userID;
-  //       this.isRegistered = true;
-  //     },
-  //     error => {
-  //       console.error('Error registering user', error);
-  //     }
-  //   );
+    this.authService.register(this.user).subscribe(
+      response => {
+        console.log('Registration successful!', response);
+        this.user.userID = response.userID;
+        this.isRegistered = true;
+      },
+      error => {
+        console.error('Error registering user', error);
+      }
+    );
 this.isRegistered = true;
   }
     onSubmitAdditionalInfo() {
-    // const formData = new FormData();
+    const formData = new FormData();
 
-    //   // Append form fields
-    // formData.append('userID', this.user.userID);
-    // formData.append('storeName', this.user.storeName);
-    // formData.append('storeDetails', this.user.storeDetails);
-    // formData.append('contactInfo', this.user.contactInfo);
-    // formData.append('promptpay', this.user.promptpay);
-    //   formData.append('openTime', this.user.openTime);
-    //   formData.append('closeTime', this.user.closeTime);
+      // Append form fields
+    formData.append('userID', this.user.userID);
+    formData.append('storeName', this.user.storeName);
+    formData.append('storeDetails', this.user.storeDetails);
+    formData.append('contactInfo', this.user.contactInfo);
+    formData.append('promptpay', this.user.promptpay);
+      formData.append('openTime', this.user.openTime);
+      formData.append('closeTime', this.user.closeTime);
       
-    // console.log('Form fields:');
-    // // console.log('userID:', this.user.userID);
-    // // console.log('storeName:', this.user.storeName);
-    // // console.log('storeDetails:', this.user.storeDetails);
-    // console.log('contactInfo:', this.user.contactInfo);
-    //   console.log('promptpay:', this.user.promptpay);
-    //   console.log('close', this.user.closeTime)
-    // // Append files
-    // if (this.storeImage) {
-    //   formData.append('storeImage', this.storeImage, this.storeImage.name);
-    // }
-    // if (this.promptpayImage) {
-    //   formData.append('promptpayimage', this.promptpayImage, this.promptpayImage.name);
-    // }
+    console.log('Form fields:');
+    // console.log('userID:', this.user.userID);
+    // console.log('storeName:', this.user.storeName);
+    // console.log('storeDetails:', this.user.storeDetails);
+    console.log('contactInfo:', this.user.contactInfo);
+      console.log('promptpay:', this.user.promptpay);
+      console.log('close', this.user.closeTime)
+    // Append files
+    if (this.storeImage) {
+      formData.append('storeImage', this.storeImage, this.storeImage.name);
+    }
+    if (this.promptpayImage) {
+      formData.append('promptpayimage', this.promptpayImage, this.promptpayImage.name);
+    }
 
-    // // Send the request
-    // this.http.post('http://localhost:3000/api/additional-info', formData).subscribe(
-    //   (response: any) => {
-    //     console.log('Data added successfully:', response);
-    //     // Handle successful response
-    //     this.router.navigate(['/main']);
-    //   },
-    //   (error: any) => {
-    //     console.error('Error adding data:', error);
-    //     // Handle error response
-    //   }
-    //   );
-      this.router.navigate(['/main']);
+    // Send the request
+    this.http.post('http://localhost:3000/api/additional-info', formData).subscribe(
+      (response: any) => {
+        console.log('Data added successfully:', response);
+        // Handle successful response
+        this.router.navigate(['/main']);
+      },
+      (error: any) => {
+        console.error('Error adding data:', error);
+        // Handle error response
+      }
+      );
+      // this.router.navigate(['/main']);
   }
 
   // Handler for file input change
